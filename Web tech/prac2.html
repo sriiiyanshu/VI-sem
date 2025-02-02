@@ -1,0 +1,131 @@
+<!--form, table, clickable list to 4th-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two Rows and Columns with Flexbox</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .row {
+        flex: 1;
+        display: flex;
+      }
+
+      .frame {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        color: white;
+      }
+
+      /* Different background colors for each frame */
+      .frame1 {
+        background-color: lightblue;
+        font-size: 24px;
+      }
+      .frame2 {
+        background-color: lightcoral;
+      }
+      .frame3 {
+        background-color: lightgreen;
+      }
+      .frame4 {
+        background-color: lightyellow;
+      }
+
+      table {
+        border: solid grey;
+      }
+
+      th,
+      td {
+        border: 1px solid grey;
+        padding: 8px 10px;
+      }
+
+      iframe {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="frame frame1">
+        <label for="name"
+          >Enter your name:
+          <input type="text" name="name" id="name" />
+          <br /><button>Submit</button>
+        </label>
+
+        <br />
+      </div>
+
+      <div class="frame frame2">
+        <table>
+          <caption>
+            Front-end web developer course 2025
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Person</th>
+              <th scope="col">Most interest in</th>
+              <th scope="col">Age</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Chris</th>
+              <td>HTML tables</td>
+              <td>22</td>
+            </tr>
+            <tr>
+              <th scope="row">Dennis</th>
+              <td>Web accessibility</td>
+              <td>45</td>
+            </tr>
+            <tr>
+              <th scope="row">Sarah</th>
+              <td>JavaScript frameworks</td>
+              <td>29</td>
+            </tr>
+            <tr>
+              <th scope="row">Karen</th>
+              <td>Web performance</td>
+              <td>36</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row" colspan="2">Average age</th>
+              <td>33</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="frame frame3" style="font-size: 24px">
+        <ul>
+          <li><a href="https://www.wikipedia.com" target="frame4">Wikipedia</a></li>
+          <li><a href="./dance-moves.gif" target="frame4">Surprise</a></li>
+          <li><a href="https://www.lipsum.com/" target="frame4">Lorem Ipsum</a></li>
+          <li><a href="https://example.com/" target="frame4">Example site</a></li>
+        </ul>
+      </div>
+      <div class="frame frame4">
+        <iframe name="frame4" src="about:blank"></iframe>
+      </div>
+    </div>
+  </body>
+</html>

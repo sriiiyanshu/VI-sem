@@ -1,0 +1,108 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo img {
+  height: 50px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  background: url("./resources/Night\ View\ of\ Campus.JPG") no-repeat center center/cover;
+  color: red;
+  text-align: center;
+  padding: 250px 20px;
+}
+
+.hero h1 {
+  font-size: 3em;
+}
+
+.hero .cta {
+  background-color: #ff6600;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+section {
+  padding: 50px 20px;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.program-list,
+.facility-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.program,
+.facility {
+  width: 45%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.program img {
+  height: 200px;
+  width: 300px;
+}
+
+.facility img {
+  height: 200px;
+  width: 300px;
+}
+
+.about-items {
+  height: 120px;
+  width: 400px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
