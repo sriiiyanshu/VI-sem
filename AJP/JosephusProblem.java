@@ -13,7 +13,7 @@ public class JosephusProblem {
     }
 
     public static void main(String[] args) {
-        int n = 50;
+        int n = 10;
         int safePosition = findSafePosition(n);
         System.out.println("The safe position for " + n + " soldiers is: " + safePosition);
     }
