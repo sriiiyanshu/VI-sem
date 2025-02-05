@@ -13,7 +13,6 @@ CurrentAccount:
 •⁠  ⁠Has an additional variable overdraftLimit (double).
 •⁠  ⁠Overrides the withdraw method to allow overdraft up to the specified limit.
 */
-
 abstract class BankAccount {
 
     String accountNumber;
@@ -27,4 +26,11 @@ abstract class BankAccount {
     }
     abstract void deposit(double amount);
     abstract void withdraw(double amount);
+
+    public void disp()
+    {
+        System.out.println("Account number: "+accountNumber);
+        System.out.println("Balance: "+balance);
+        System.out.println();
+    }
 }

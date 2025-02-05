@@ -14,14 +14,14 @@ CurrentAccount:
 •⁠  ⁠Overrides the withdraw method to allow overdraft up to the specified limit.
 */
 
-class SavingsAccount extends BankAccount
+class CurrentAccount extends BankAccount
 {
-    double interestRate;
-    SavingsAccount(){}
-    SavingsAccount(String accountNumber, double balance, double ir)
+    double overdraftLimit;
+
+    CurrentAccount(String accountNumber, double balance, double odl)
     {
         super(accountNumber, balance);
-        interestRate = ir;
+        overdraftLimit=odl;
     }
 
     public void deposit(double amount)
@@ -29,7 +29,6 @@ class SavingsAccount extends BankAccount
         if(amount>0)
         {
             balance += amount;
-            balance += balance*(interestRate/100);
             System.out.println("Deposit successful. New Balance: "+balance);
         }
         else
@@ -40,16 +39,14 @@ class SavingsAccount extends BankAccount
 
     public void withdraw(double amount)
     {
-        if(balance-amount>500)
+        if(balance-amount > overdraftLimit)
         {
             balance -= amount;
-            System.out.println("Amount withdrawn: "+amount);
-            System.out.println("Balance amount is: "+balance);
+            System.out.println("Withdrawal Successful. New balance: "+balance);
         }
         else
         {
-            System.out.println("Insufficient Balance");
+            System.out.println("Invalid amount. Overdraft Limit exceeded.");
         }
     }
 }
-
