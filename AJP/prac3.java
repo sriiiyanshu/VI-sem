@@ -1,7 +1,7 @@
 //Write an efficient java code to check if a number is prime or not in a given range of numbers.
 import java.util.Scanner;
 
-class prac2 {
+class prac3 {
     public static void main(String args[])
     {
         Scanner sc = new Scanner(System.in);

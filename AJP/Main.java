@@ -6,6 +6,8 @@ public class Main {
         savingsAccount.deposit(500);
         savingsAccount.withdraw(200);
         savingsAccount.withdraw(1000);
+        System.out.println("Final account details are:/n");
+        savingsAccount.disp();
 
         System.out.println();
 
@@ -15,5 +17,7 @@ public class Main {
         currentAccount.deposit(300);
         currentAccount.withdraw(2500); 
         currentAccount.withdraw(1000); 
+        System.out.println("Final account details are:/n");
+        currentAccount.disp();
     }
 }
