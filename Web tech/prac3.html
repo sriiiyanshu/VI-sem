@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deoghar City - The Sacred City</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fce7c8;
+        color: #333;
+      }
+
+      header {
+        background-color: #b1c29e;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+
+      nav {
+        background-color: #333;
+        overflow: hidden;
+      }
+
+      nav a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        background-color: #575757;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      .section {
+        margin-bottom: 40px;
+      }
+
+      .section h2 {
+        color: #4caf50;
+        border-bottom: 2px solid #4caf50;
+        padding-bottom: 10px;
+      }
+
+      .section p {
+        line-height: 1.6;
+      }
+
+      .section img {
+        height: auto;
+        border-radius: 10px;
+        margin-top: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+
+      .attractions,
+      .transport {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .attraction,
+      .transport-facility {
+        flex: 1 1 calc(33.333% - 40px);
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .attraction:hover,
+      .transport-facility:hover {
+        transform: translateY(-10px);
+      }
+
+      .attraction h3,
+      .transport-facility h3 {
+        color: #4caf50;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Deoghar</h1>
+      <p>The Cultural Capital of Jharkhand</p>
+    </header>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#attractions">Attractions</a>
+      <a href="#transport">Transport</a>
+    </nav>
+
+    <div class="container">
+      <section id="about" class="section">
+        <h2>About Deoghar</h2>
+        <p>
+          Deoghar, also known as Baidyanath Dham, is a sacred city in the state of Jharkhand, India. It is one of the twelve Jyotirlingas and is a significant pilgrimage site for Hindus. The city is
+          known for its temples, serene environment, and rich cultural heritage.
+        </p>
+        <img src="https://www.financialexpress.com/wp-content/uploads/2020/07/temple660.jpg?w=1024" alt="Deoghar Temple" />
+      </section>
+
+      <section id="attractions" class="section">
+        <h2>Tourist Attractions</h2>
+        <div class="attractions">
+          <div class="attraction">
+            <h3>Baidyanath Temple</h3>
+            <p>One of the twelve Jyotirlingas, this temple is the most famous attraction in Deoghar.</p>
+          </div>
+          <div class="attraction">
+            <h3>Naulakha Mandir</h3>
+            <p>A beautiful temple dedicated to Radha-Krishna, resembling the Belur Math in West Bengal.</p>
+          </div>
+          <div class="attraction">
+            <h3>Tapovan</h3>
+            <p>A serene place with hot springs and beautiful scenery, perfect for meditation and relaxation.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="transport" class="section">
+        <h2>Transport Facilities</h2>
+        <div class="transport">
+          <div class="transport-facility">
+            <h3>By Air</h3>
+            <p>The nearest airport is Deoghar Airport (DGH), which is well-connected to major cities like Kolkata, Patna, and Ranchi.</p>
+          </div>
+          <div class="transport-facility">
+            <h3>By Train</h3>
+            <p>Deoghar has its own railway station, Baidyanath Dham Junction (BDME), which is connected to major cities like Kolkata, Delhi, and Mumbai.</p>
+          </div>
+          <div class="transport-facility">
+            <h3>By Road</h3>
+            <p>Deoghar is well-connected by road. Regular bus services are available from nearby cities like Ranchi, Patna, and Kolkata.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Deoghar Jharkhand. Designed by Sriyanshu Azad.</p>
+    </footer>
+  </body>
+</html>
