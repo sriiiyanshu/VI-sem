@@ -4,6 +4,7 @@ import java.util.*;
 public class prac5 extends Thread {
 
     String task;
+    static int num;
 
     prac5(String task)
     {
@@ -11,11 +12,11 @@ public class prac5 extends Thread {
     }
 
 
-    public void Even()throws IOException
+    public void Even(int n)throws IOException
     {
         BufferedReader br = new BufferedReader(new FileReader("nums.txt"));
         int evenSum=0;
-        for(int i=0;i<10;i++)
+        for(int i=0;i<n;i++)
         {
             int no=Integer.parseInt(br.readLine());
             if(no%2==0)
@@ -27,11 +28,11 @@ public class prac5 extends Thread {
         br.close();
     }
 
-    public void Odd()throws IOException
+    public void Odd(int n)throws IOException
     {
         BufferedReader br = new BufferedReader(new FileReader("nums.txt"));
         int oddSum=0;
-        for(int i=0;i<10;i++)
+        for(int i=0;i<n;i++)
         {
             int no=Integer.parseInt(br.readLine());
             if(no%2!=0)
@@ -48,9 +49,9 @@ public class prac5 extends Thread {
         try
         {
         if(task.equals("even"))
-        Even();
+        Even(num);
         else if(task.equals("odd"))
-        Odd();
+        Odd(num);
         }
         catch(Exception e)
         {
@@ -61,13 +62,18 @@ public class prac5 extends Thread {
     public static void main(String args[])throws IOException, InterruptedException 
     {
         BufferedWriter bw= new BufferedWriter(new FileWriter("nums.txt"));
+        BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
         Random r = new Random();
-        for (int i=0;i<10;i++)
+
+        System.out.println("How many numbers to generate: ");
+        num=Integer.parseInt(br.readLine());
+        for (int i=0;i<num;i++)
         {
             int no=r.nextInt(1000)+1;
             bw.write(no+"\n");
     }
     bw.close();
+    br.close();
 
     prac5 ob1 = new prac5("even");
     prac5 ob2 = new prac5("odd");
