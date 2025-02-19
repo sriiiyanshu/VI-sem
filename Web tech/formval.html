@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script>
+        function validation(){
+        let name=document.getElementById("#name").value;
+        let pwd=document.getElementById("#pwd").value;
+        name=name.value.trim();
+        pwd=pwd.value.trim();
+    
+        if(name=="" || password=="")
+        {
+            alert("Fields cannot be empty");
+        }
+        if(password.length<6)
+        {
+            alret("Password should be at least 6 characters");
+        }
+    }
+    </script>
+</head>
+
+<body>
+    
+    <form onsubmit="return validation()">
+        Username:<input type="text" name="name">
+        <br/><br/>
+        Password:<input type="password" name="pwd">
+        <br/>
+        <button type="button" onclick="validation"> Submit </button>
+    </form>
+
+
+</body>
+
+</html>
+
+write a js program to reverse a given string
+write a javascript function that finds maximum number in an array
+write a js program to check whether a given number is prime
+write a js program to change the string to title (first alphabet of every word should be Caps)
