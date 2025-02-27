@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+</head>
+<body>
+    <h1>Product of two numbers</h1>
+    <input type="number" id="num1" placeholder="Enter 1st number">
+    <input type="number" id="num2" placeholder="Enter 2nd number">
+    <button onclick="product()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        function product(){
+            const n1=document.getElementById('num1').value;
+            const num1=parseInt(n1);
+            const n2=document.getElementById('num2').value;
+            const num2=parseInt(n2);
+
+            const res=num1*num2;
+            document.getElementById('result').innerText=`${res} is product`;
+        }
+    </script>
+</body>
+</html>
+
+js function to validate whether a given value type is NaN or not.

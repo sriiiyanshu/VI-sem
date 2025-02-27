@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Convert <br/>Centigrade Temp <br/>to <br/>Fahrenheit Temp</h1>
+    <input type="number" id="c" placeholder="Enter Temperature in Fahrenheit">
+    <br/>
+    <button onclick="calculate()">Convert</button>
+    <p id="result"></p>
+
+    <script>
+        function calculate(){
+            const val=document.getElementById('c').value;
+            const tc=parseInt(val);
+            const tf=9*tc/5+32;
+            document.getElementById('result').innerText= `Temperature is ${tf} degree fahrenheit`
+        }
+    </script>
+</body>
+</html>

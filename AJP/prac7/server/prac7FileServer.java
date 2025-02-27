@@ -19,6 +19,7 @@ public class prac7FileServer {
             System.out.println("File not found.");
         } 
         else {
+            pw.println("File Found.");
             long filesize = file.length();
             pw.println(filesize);
 
