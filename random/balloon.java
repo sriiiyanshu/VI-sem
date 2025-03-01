@@ -7,49 +7,34 @@ public class balloon {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
-        int x1[]=new int[n];
-        int x2[]=new int[n];
+        int x1[][]=new int[n][2];
         int flag[]=new int[n];
         int count=0;
-
         for(int i=0;i<n;i++)
         {
-            x1[i]=sc.nextInt();
-            x2[i]=sc.nextInt();
+            x1[i][0]=sc.nextInt();
+            x1[i][1]=sc.nextInt();
             flag[i]=0;
         }
 
-        for(int i=1;i<n;i++)
-        {
-            int k1=x1[i];
-            int k2=x2[i];
-            int j=i-1;
+        Arrays.sort(x1, (a,b) -> Integer.compare(a[0], b[0]));
 
-            while(j>=0 && x1[j]>k1)
-            {
-                x1[j+1]=x1[j];
-                x2[j+1]=x2[j];
-                j=j-1;
-            } 
-            x1[j+1]=k1;
-            x2[j+1]=k2;
-        }
-        for(int i=0;i<n;i++)
+        for(int[] range: x1)
         {
-            for(int j=i+1;j<n;j++)
+            System.out.println(Arrays.toString(range));
+        }
+
+        for(int i=0;i<n-1;i++)
+        {
+            if(x1[i][1]>x1[i+1][0] && flag[i+1]==0)
             {
-                if(x2[i]>=x1[j] && flag[j]==0)
-                {
-                    flag[j]=1;
-                }
+                flag[i+1]=1;
             }
         }
         for(int i=0;i<n;i++)
         {
             if(flag[i]==0)
-            {
-                count++;
-            }
+            count++;
         }
         System.out.println(count);
         sc.close();
