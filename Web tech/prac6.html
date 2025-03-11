@@ -1,0 +1,111 @@
+<!--Create HTML Page that contains form with fields Name, Email, Mobile No, Gender , Favourite Colour and a
+button now write a JavaScript code to combine and display the information in textbox when the button is
+clicked and implement validation.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        h1{
+            text-align: center;
+        }
+        .enter{
+            display: flex;
+            flex-direction: column;
+            gap:1rem;
+            align-items: center;
+        }
+        input{
+            margin-bottom: 1rem;
+        }
+
+
+        input{
+            height: 20px;
+        }
+
+        button{
+            border-radius: 5px;
+            height: 1.5rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <section class="enter">
+    <h1>Student Form</h1>
+    <form>
+        <div><span>Name: </span><input type="text"  id="name"></div>
+        <div><span>Email:</span> <input type="text" id="email"></div>
+        <div><span>Mobile No: </span><input type="text" id="number"></div>
+        <div><span>Gender: </span><input name="gender" type="radio" value="male">Male
+                    <input name="gender" type="radio" value ="female">Female</div>
+        <div><span>Favourite Color: </span><input type="text" id="color"></div>
+        <div><button type="button" onclick="check()">Submit</button></div>
+    </form>
+</section>
+    <section class="display">
+        <h2>Details are:</h2>
+        <p id="dname"></p>
+        <p id="dmail"></p>
+        <p id="dnum"></p>
+        <p id="dgen"></p>
+        <p id="dcol"></p>
+    </section>
+    
+    <script>
+        function check()
+        {
+            event.preventDefault();
+            let name=document.getElementById("name").value;
+            let email=document.getElementById("email").value;
+            let num=document.getElementById("number").value;
+            let gender=document.querySelector('input[name="gender"]:checked');
+            let color=document.getElementById("color").value;
+
+            let namepattern=/^[A-Za-z\s]{3,50}$/;
+            let mailpattern=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            let numpattern=/^[0-9]{10}$/;
+
+            if(!namepattern.test(name))
+            {
+                alert("Enter correct Name");
+                return;
+            }
+            if(!mailpattern.test(email))
+            {
+                alert("Enter correct Email");
+                return;
+            }
+            if(!numpattern.test(num))
+            {
+                alert("Enter correct phone number")
+                return;
+            }
+            if(!gender)
+            {
+                alert("Select Gender");
+                return;
+            }
+            if(!color)
+            {
+                alert("Enter Color");
+                return;
+            }
+            else
+            {
+                document.getElementById("dname").innerText=`Name: ${name}`;
+                document.getElementById("dmail").innerText=`Email: ${email}`;
+                document.getElementById("dnum").innerText=`Mobile Number: ${num}`;
+                document.getElementById("dgen").innerText=`Gender: ${gender.value}`;
+                document.getElementById("dcol").innerText=`Favourite Color: ${color}`;
+            }
+        }
+    </script>
+</body>
+</html>
