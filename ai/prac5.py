@@ -1,56 +1,54 @@
-#Write a program to implement Water Jug Problem.
-
+#Write a program to implement water jug problem
 from collections import deque
 
-def water_jug_bfs(x, y, z):
-    # Define a function to get all possible states from the current state
-    def get_next_states(state):
-        a, b = state
-        next_states = []
-
-        # 1. Fill Jug A
-        next_states.append((x, b))
-        # 2. Fill Jug B
-        next_states.append((a, y))
-        # 3. Empty Jug A
-        next_states.append((0, b))
-        # 4. Empty Jug B
-        next_states.append((a, 0))
-        # 5. Pour from Jug A to Jug B
-        pour_amount = min(a, y - b)
-        next_states.append((a - pour_amount, b + pour_amount))
-        # 6. Pour from Jug B to Jug A
-        pour_amount = min(b, x - a)
-        next_states.append((a + pour_amount, b - pour_amount))
-
-        return next_states
-
-    # BFS setup
-    visited = set()  # To keep track of visited states
-    queue = deque()   # Queue for BFS
-    queue.append((0, 0))  # Start with both jugs empty
+def water_jug_shortest_path(capacity_x, capacity_y, target):
+    """Finds the shortest path to solve the Water Jug Problem using BFS."""
+    visited = set()
+    queue = deque([(0, 0)])  # Initial state: both jugs empty
+    parent = {}  # To store the previous state for backtracking
 
     while queue:
-        current_state = queue.popleft()
-        if current_state in visited:
+        x, y = queue.popleft()
+
+        if (x, y) in visited:
             continue
-        visited.add(current_state)
+        
+        visited.add((x, y))
 
-        a, b = current_state
-        if a == z or b == z or a + b == z:
-            print(f"Solution found: {current_state}")
-            return True
+        if x == target or y == target:
+            print("Solution found!\n")
+            path = []
+            while (x, y) in parent:
+                path.append((x, y))
+                x, y = parent[(x, y)]
+            path.append((0, 0))  # Start state
+            path.reverse()
 
-        # Explore all next states
-        for next_state in get_next_states(current_state):
-            if next_state not in visited:
-                queue.append(next_state)
+            print("Steps to solution:")
+            for step in path:
+                print(f"Jug X: {step[0]}L, Jug Y: {step[1]}L")
+            return
 
-    print("No solution exists.")
-    return False
+        # Define optimized moves (Prioritizing pouring)
+        possible_moves = [
+            (capacity_x, y),  # Fill Jug X
+            (x, capacity_y),  # Fill Jug Y
+            (0, y),  # Empty Jug X
+            (x, 0),   # Empty Jug Y
+            (max(0, x - (capacity_y - y)), min(capacity_y, y + x)),  # Pour X → Y
+            (min(capacity_x, x + y), max(0, y - (capacity_x - x)))  # Pour Y → X
+        ]
 
-# Example usage
-x = 4  # Capacity of Jug A
-y = 3  # Capacity of Jug B
-z = 2  # Desired amount of water
-water_jug_bfs(x, y, z)
+        for move in possible_moves:
+            if move not in visited:
+                queue.append(move)
+                parent[move] = (x, y)  # Store the move that led here
+
+    print("No solution possible.")
+
+# Example Usage
+jug_x = 4
+jug_y = 3
+target_amount = 2
+water_jug_shortest_path(jug_x, jug_y, target_amount)
+

@@ -8,7 +8,8 @@ Goal State: P=2 & Q=n
 II. Possible actions
 1. Fill Jug A with 4L water [P=4,Q]
 2. Fill Jug B with 3L water [P,Q=3]
-3. Empty JugA[P,Q=0]
+3. Empty JugA [P=0,Q]
+4. Empty JugB [P,Q=0]
 5. Transfer complete water from B to A [P,Q]->[P+Q,0]
 6. Transfer complete water from A to B [P,Q]->[0,P+Q]
 7. Transfer some water from B to A until A gets full [P,Q-(4-P)]
