@@ -1,0 +1,20 @@
+Start
+    |
+Generate a random word
+    |
+Generate as naby blanks as number of letters------------|
+    |                                                   |
+Ask the user to guess                                   |
+    |                                                   |
+is letter there             No                          |
+    |----------------------------------Lose a life      |
+    |yes                                       |        |
+replace the blank with letter                  |        |
+    |                            NO            |        |
+Are all blanks filled?----------------------------------><-----------|
+    |                                          |                   NO|   
+    |yes                             Have they run put of lives------|
+    |                                          |
+    |                                          |yes
+    |                                          |
+    GAME OVER<----------------------------------|

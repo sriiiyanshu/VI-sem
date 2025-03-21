@@ -38,6 +38,7 @@ def water_jug_shortest_path(capacity_x, capacity_y, target):
             (max(0, x - (capacity_y - y)), min(capacity_y, y + x)),  # Pour X → Y
             (min(capacity_x, x + y), max(0, y - (capacity_x - x)))  # Pour Y → X
         ]
+        
 
         for move in possible_moves:
             if move not in visited:
