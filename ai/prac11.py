@@ -1,3 +1,4 @@
+#Parts of speech
 import nltk
 
 # Input sentence
